@@ -66,7 +66,7 @@ RULENAME="time_r3p",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]
 RULENAME="time_r3q",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf?%reThisNextLastBefore %reWeekday",NORM_VALUE="UNDEF-%normThisNextLast(group(7))-%normWeekday(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
 
 // EXAMPLE r4: la sera del 20 Giugno 1970
-RULENAME="time_r4",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del )? (%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(17)-%normMonth(group(13))-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+RULENAME="time_r4",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del )?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(17)-%normMonth(group(13))-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
 
 RULENAME="time_r15a",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%reThisNextLast %rePartOfDay",NORM_VALUE="UNDEF-%normThisNextLast(group(5))-dayT%normPartOfDay(group(6))",NORM_MOD="%normPartWords(group(2))"
 RULENAME="time_r15b",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reThisNextLast",NORM_VALUE="UNDEF-%normThisNextLast(group(6))-dayT%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
