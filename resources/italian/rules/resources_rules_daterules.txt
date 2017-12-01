@@ -78,7 +78,7 @@ RULENAME="date_r1a",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]
 RULENAME="date_r1b",EXTRACTION="((\b[Ii]l |\b[Ll][oa'][\s]?)?(%reDayNumber|%reDayWordTh|%reDayWord))%reAndOrTo(\b[Ii]l |\b[Ll][oa'][\s]?)?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del mese di )?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(18)-%normMonth(group(14))-%normDay(group(3))",OFFSET="group(1)-group(1)"
 RULENAME="date_r1c",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del )?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(15)-%normMonth(group(11))-%normDay(group(6))",NORM_MOD="%normPartWords(group(2))"
 RULENAME="date_r1d",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del )?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?'?%reYear2Digit",NORM_VALUE="UNDEF-centurygroup(15)-%normMonth(group(11))-%normDay(group(6))",NORM_MOD="%normPartWords(group(2))"
-RULENAME="date_r1e",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%reDayWordTh giorno (di |del |del mese di |dell'\s?)?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(11)-%normMonth(group(7))-%normDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+RULENAME="date_r1e",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%reDayWordTh giorno (di |del |del mese di |dell'[\s]?)?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(11)-%normMonth(group(7))-%normDay(group(5))",NORM_MOD="%normPartWords(group(2))"
 
 
 // date_r2
