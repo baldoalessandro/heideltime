@@ -66,7 +66,14 @@ RULENAME="time_r3p",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]
 RULENAME="time_r3q",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf?%reThisNextLastBefore %reWeekday",NORM_VALUE="UNDEF-%normThisNextLast(group(7))-%normWeekday(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
 
 // EXAMPLE r4: la sera del 20 Giugno 1970
-RULENAME="time_r4",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del )?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(17)-%normMonth(group(13))-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+RULENAME="time_r4a",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del |del mese di |dell'[\s]?)?(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(17)-%normMonth(group(13))-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+RULENAME="time_r4b",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del |del mese di |dell'[\s]?)?(%reMonthLong|%reMonthShort) (del )?'?%reYear2Digit",NORM_VALUE="UNDEF-centurygroup(17)-%normMonth(group(13))-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+RULENAME="time_r4c",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf%reDayWordTh giorno (di |del |del mese di |dell'[\s]?)(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?%reYear4Digit",NORM_VALUE="group(13)-%normMonth(group(9))-%normDay(group(7))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+RULENAME="time_r4d",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf%reDayWordTh giorno (di |del |del mese di |dell'[\s]?)(%reMonthLong|%reMonthShort) (del |dell'\s?anno )?'?%reYear2Digit",NORM_VALUE="UNDEF-centurygroup(13)-%normMonth(group(9))-%normDay(group(7))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+
+// Example r5: la mattina del 4 aprile
+RULENAME="time_r4e",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del |del mese di )?(%reMonthLong|%reMonthShort)",NORM_VALUE="UNDEF-year-%normMonth(group(13))-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+
 
 RULENAME="time_r15a",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%reThisNextLast %rePartOfDay",NORM_VALUE="UNDEF-%normThisNextLast(group(5))-dayT%normPartOfDay(group(6))",NORM_MOD="%normPartWords(group(2))"
 RULENAME="time_r15b",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reThisNextLast",NORM_VALUE="UNDEF-%normThisNextLast(group(6))-dayT%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
