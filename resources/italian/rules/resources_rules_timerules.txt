@@ -74,6 +74,9 @@ RULENAME="time_r4d",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]
 // Example r5: la mattina del 4 aprile
 RULENAME="time_r4e",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWordTh|%reDayWord) (di |del |del mese di )?(%reMonthLong|%reMonthShort)",NORM_VALUE="UNDEF-year-%normMonth(group(13))-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
 
+// Example r6: il pomeriggio del 2
+RULENAME="time_r4f",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf([Gg]iorno )?(%reDayNumber|%reDayWord)",NORM_VALUE="UNDEF-this-month-%normDay(group(8))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
+RULENAME="time_r4g",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reOf%reDayWordTh giorno",NORM_VALUE="UNDEF-this-month-%normDay(group(7))T%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
 
 RULENAME="time_r15a",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%reThisNextLast %rePartOfDay",NORM_VALUE="UNDEF-%normThisNextLast(group(5))-dayT%normPartOfDay(group(6))",NORM_MOD="%normPartWords(group(2))"
 RULENAME="time_r15b",EXTRACTION="(%rePartWords %reOf?)?(\b[Ii]l? |\b[Ll][oa'][\s]?)?%rePartOfDay %reThisNextLast",NORM_VALUE="UNDEF-%normThisNextLast(group(6))-dayT%normPartOfDay(group(5))",NORM_MOD="%normPartWords(group(2))"
